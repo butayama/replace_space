@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import pytest
-from replace_space.skeleton import fib
 
 __author__ = "Buta Yama"
 __copyright__ = "Buta Yama"
