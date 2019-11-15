@@ -1,16 +1,16 @@
 """
 Change spaces with underscore in directories and files
 """
-
-from unittest import TestCase
+import unittest
+import pytest
 from search_space import search_for_spaces
 
 
 def test_search_for_spaces():
-    assert search_for_spaces.file_list == ['foo foo.txt']
+    assert search_for_spaces == ['foo foo.txt']
 
 
-class AnalyseDirectoryTest(TestCase):
+class AnalyseDirectoryTest(unittest.TestCase):
 
     # In my home directory I start the program (P) with
     # $ python replace_space_unused.py -analyse /home/uwe/D_sdb2/Blender
