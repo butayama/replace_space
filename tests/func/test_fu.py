@@ -7,7 +7,7 @@ from search_space import search_for_spaces
 
 
 def test_search_for_spaces():
-    assert search_for_spaces == ['foo foo.txt']
+    assert search_for_spaces() == ['foo foo.txt']
 
 
 class AnalyseDirectoryTest(unittest.TestCase):

@@ -1,4 +1,4 @@
-from skilift import _Bench, Lift, Line, Quad
+import skilift
 
 
 import pytest
@@ -8,18 +8,18 @@ import pytest
 def line_n(request):
     size = request.node.get_closest_marker(
         'line_size').args[0]
-    line = Line(size)
+    line = skilift.Line(size)
     return line
 
 
 @pytest.fixture
 def line5():
-    line = Line(5)
+    line = skilift.Line(5)
     return line
 
 @pytest.fixture
 def quad10():
-    lift = Lift(10, Quad)
+    lift = skilift.Lift(10, Quad)
     return lift
 
 
@@ -27,7 +27,7 @@ def quad10():
 def BenchN(request):
     size_ = request.node.get_closest_marker(
         'bench_size').args[0]
-    class BSize(_Bench):
+    class BSize(skilift._Bench):
         size = size_
     return BSize
 

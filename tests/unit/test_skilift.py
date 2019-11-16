@@ -1,11 +1,11 @@
-from skilift import Lift, Line
+import skilift
 
 import pytest
 
 
 @pytest.mark.bench_size(6)
 def test_bench6(BenchN, line5):
-    lift = Lift(10, BenchN)
+    lift = skilift.Lift(10, BenchN)
     res = lift.one_bench(line5)
     assert res == {'loaded': 5, 'num_benches': 1, 'unloaded': 0}
 
@@ -33,7 +33,7 @@ def test_lift_one_bench(line5, quad10):
 @pytest.mark.parametrize('size',
             [[],None,'10'])
 def test_line_bad(size):
-    line = Line(size)
+    line = skilift.Line(size)
     with pytest.raises(TypeError):
         res = line.take(1)
 
@@ -46,7 +46,7 @@ def test_line_bad(size):
 def test_line_sizes(line_size,
                     take_count,
                     num_people):
-    line = Line(line_size)
+    line = skilift.Line(line_size)
     res = line.take(take_count)
     assert line.num_people == num_people
 
@@ -58,8 +58,8 @@ def test_half_take(monkeypatch):
             amount = self.num_people
         self.num_people -= amount
         return amount
-    monkeypatch.setattr(Line, 'take', half_take)
-    line = Line(10)
+    monkeypatch.setattr(skilift.Line, 'take', half_take)
+    line = skilift.Line(10)
     res = line.take(5)
     assert res == 2
 
