@@ -12,7 +12,7 @@ def test_search_for_spaces():
 class AnalyseDirectoryTest(unittest.TestCase):
 
     # In my home directory I start the program (P) with
-    # $ python replace_space_unused.py -analyse /home/uwe/D_sdb2/Blender
+    # $ python replace_space.py -analyse /home/uwe/D_sdb2/Blender
     # P lists files and directories on the screen with spaces in their name.
     pass
     # At the end of the output a list is shown:
