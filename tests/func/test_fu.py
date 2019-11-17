@@ -2,7 +2,6 @@
 Change spaces with underscore in directories and files
 """
 import unittest
-import pytest
 from search_space import search_for_spaces
 
 
